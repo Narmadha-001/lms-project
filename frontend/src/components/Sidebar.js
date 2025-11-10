@@ -119,27 +119,27 @@ const Sidebar = () => {
           path: '/instructor',
           description: 'Manage your courses'
         },
-        {
-          id: 'create-course',
-          label: 'Create Course',
-          icon: FiPlus,
-          path: '/instructor/create-course',
-          description: 'Build new courses'
-        },
-        {
-          id: 'analytics',
-          label: 'Analytics',
-          icon: FiBarChart2,
-          path: '/instructor/analytics',
-          description: 'Student performance insights'
-        },
-        {
-          id: 'live-classes',
-          label: 'Live Classes',
-          icon: FiPlay,
-          path: '/instructor/live-classes',
-          description: 'Conduct live sessions'
-        }
+        // {
+        //   id: 'create-course',
+        //   label: 'Create Course',
+        //   icon: FiPlus,
+        //   path: '/instructor/create-course',
+        //   description: 'Build new courses'
+        // },
+        // {
+        //   id: 'analytics',
+        //   label: 'Analytics',
+        //   icon: FiBarChart2,
+        //   path: '/instructor/analytics',
+        //   description: 'Student performance insights'
+        // },
+        // {
+        //   id: 'live-classes',
+        //   label: 'Live Classes',
+        //   icon: FiPlay,
+        //   path: '/instructor/live-classes',
+        //   description: 'Conduct live sessions'
+        // }
       );
     }
 
