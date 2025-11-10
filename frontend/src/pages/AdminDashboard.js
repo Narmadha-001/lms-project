@@ -443,11 +443,11 @@ const AdminDashboard = () => {
         animate={{ opacity: 1, y: 0 }}
         className="card"
       >
-        <div className="card-header">
+        {/* <div className="card-header">
           <h2 className="text-xl font-semibold text-slate-900">Quick Actions</h2>
-        </div>
-        <div className="card-body">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        </div> */}
+        {/* <div className="card-body"> */}
+          {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <Link to="/admin/users" className="flex flex-col items-center p-4 rounded-lg hover:bg-slate-50 transition-colors duration-200">
               <FiUsers className="w-8 h-8 text-blue-600 mb-2" />
               <span className="text-sm font-medium text-slate-700">Manage Users</span>
@@ -464,8 +464,8 @@ const AdminDashboard = () => {
             //   <FiSettings className="w-8 h-8 text-orange-600 mb-2" />
             //   <span className="text-sm font-medium text-slate-700">System Settings</span>
             // </Link>
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
       </motion.div>
 
       {/* Pending Course Approvals */}
