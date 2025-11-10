@@ -376,7 +376,7 @@ const InstructorDashboard = () => {
         animate={{ opacity: 1, y: 0 }}
         className="card"
       >
-        <div className="card-header">
+        {/* <div className="card-header">
           <h2 className="text-xl font-semibold text-slate-900">Quick Actions</h2>
         </div>
         <div className="card-body">
@@ -398,7 +398,7 @@ const InstructorDashboard = () => {
               <span className="text-sm font-medium text-slate-700">Manage Students</span>
             </Link>
           </div>
-        </div>
+        </div> */}
       </motion.div>
 
       {/* My Courses */}
