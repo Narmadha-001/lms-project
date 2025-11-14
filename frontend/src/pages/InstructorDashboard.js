@@ -117,10 +117,10 @@ const InstructorDashboard = () => {
     const fetchInstructorData = async () => {
       try {
         setLoading(true);
-        
+
         // Simulate API calls
         await new Promise(resolve => setTimeout(resolve, 1000));
-        
+
         setStats({
           totalCourses: 3,
           totalStudents: 2780,
@@ -129,7 +129,7 @@ const InstructorDashboard = () => {
           completionRate: 80,
           activeStudents: 1240
         });
-        
+
         setCourses(mockCourses);
         setRecentStudents(mockStudents);
         setAnalytics({
@@ -203,8 +203,8 @@ const InstructorDashboard = () => {
         />
         <div className="absolute top-4 right-4">
           <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-            course.status === 'published' 
-              ? 'bg-green-100 text-green-800' 
+            course.status === 'published'
+              ? 'bg-green-100 text-green-800'
               : 'bg-yellow-100 text-yellow-800'
           }`}>
             {course.status}
@@ -215,7 +215,7 @@ const InstructorDashboard = () => {
         <h3 className="text-lg font-semibold text-slate-900 mb-2 line-clamp-2">
           {course.title}
         </h3>
-        
+
         <div className="space-y-3 mb-4">
           <div className="flex items-center justify-between text-sm">
             <span className="text-slate-600">Students</span>
@@ -277,7 +277,7 @@ const InstructorDashboard = () => {
         <div className="flex items-center space-x-2 mb-1">
           <span className="text-sm font-medium text-slate-900">{student.progress}%</span>
           <div className="w-16 bg-slate-200 rounded-full h-2">
-            <div 
+            <div
               className="bg-blue-600 h-2 rounded-full transition-all duration-300"
               style={{ width: `${student.progress}%` }}
             ></div>
@@ -325,7 +325,7 @@ const InstructorDashboard = () => {
           color="blue"
           subtitle="Published courses"
         />
-        
+
         <StatCard
           title="Total Students"
           value={stats.totalStudents.toLocaleString()}
@@ -334,7 +334,7 @@ const InstructorDashboard = () => {
           subtitle="Across all courses"
           trend={15}
         />
-        
+
         <StatCard
           title="Total Revenue"
           value={`$${stats.totalRevenue.toLocaleString()}`}
@@ -343,7 +343,7 @@ const InstructorDashboard = () => {
           subtitle="Lifetime earnings"
           trend={23}
         />
-        
+
         <StatCard
           title="Average Rating"
           value={stats.averageRating}
@@ -351,7 +351,7 @@ const InstructorDashboard = () => {
           color="purple"
           subtitle="Course ratings"
         />
-        
+
         <StatCard
           title="Completion Rate"
           value={`${stats.completionRate}%`}
@@ -359,7 +359,7 @@ const InstructorDashboard = () => {
           color="orange"
           subtitle="Student success"
         />
-        
+
         <StatCard
           title="Active Students"
           value={stats.activeStudents.toLocaleString()}
@@ -426,7 +426,7 @@ const InstructorDashboard = () => {
             </Link>
           </div>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {courses.map((course, index) => (
             <motion.div

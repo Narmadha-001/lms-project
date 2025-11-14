@@ -2,14 +2,14 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import NotificationSystem from './NotificationSystem';
-import { 
-  FiSearch, 
-  FiUser, 
-  FiSettings, 
-  FiLogOut, 
-  FiMenu, 
-  FiX, 
-  FiSun, 
+import {
+  FiSearch,
+  FiUser,
+  FiSettings,
+  FiLogOut,
+  FiMenu,
+  FiX,
+  FiSun,
   FiMoon,
   FiChevronDown,
   FiBookmark,
@@ -20,7 +20,7 @@ import {
 const Navbar = () => {
   const { user, logout, isAuthenticated } = useAuth();
   const navigate = useNavigate();
-  
+
   // State management
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -43,7 +43,7 @@ const Navbar = () => {
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const theme = savedTheme || (prefersDark ? 'dark' : 'light');
-    
+
     setIsDarkMode(theme === 'dark');
     document.documentElement.setAttribute('data-theme', theme);
   }, []);
@@ -170,7 +170,7 @@ const Navbar = () => {
                           </div>
                         </div>
                       </div>
-                      
+
                       <div className="py-2">
                         <Link
                           to="/profile"
@@ -213,7 +213,7 @@ const Navbar = () => {
                           Analytics
                         </Link>
                       </div>
-                      
+
                       <div className="border-t border-slate-200 py-2">
                         <button
                           onClick={handleLogout}
@@ -275,7 +275,7 @@ const Navbar = () => {
                       </div>
                     </form>
                   </div>
-                  
+
                   {/* Mobile Profile Info */}
                   <div className="px-3 py-2 border-b border-slate-200">
                     <div className="flex items-center space-x-3">
@@ -294,7 +294,7 @@ const Navbar = () => {
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* Mobile Navigation Links */}
                   <Link
                     to="/profile"
@@ -351,4 +351,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

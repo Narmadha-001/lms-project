@@ -145,10 +145,10 @@ const AdminDashboard = () => {
     const fetchAdminData = async () => {
       try {
         setLoading(true);
-        
+
         // Simulate API calls
         await new Promise(resolve => setTimeout(resolve, 1000));
-        
+
         setStats({
           totalUsers: 12450,
           totalCourses: 156,
@@ -157,7 +157,7 @@ const AdminDashboard = () => {
           pendingApprovals: 12,
           systemHealth: 98
         });
-        
+
         setRecentUsers(mockUsers);
         setPendingCourses(mockPendingCourses);
         setSystemAlerts(mockSystemAlerts);
@@ -392,7 +392,7 @@ const AdminDashboard = () => {
           subtitle="Registered users"
           trend={12}
         />
-        
+
         <StatCard
           title="Total Courses"
           value={stats.totalCourses}
@@ -401,7 +401,7 @@ const AdminDashboard = () => {
           subtitle="Published courses"
           trend={8}
         />
-        
+
         <StatCard
           title="Total Revenue"
           value={`$${stats.totalRevenue.toLocaleString()}`}
@@ -410,7 +410,7 @@ const AdminDashboard = () => {
           subtitle="Platform earnings"
           trend={25}
         />
-        
+
         <StatCard
           title="Active Users"
           value={stats.activeUsers.toLocaleString()}
@@ -419,7 +419,7 @@ const AdminDashboard = () => {
           subtitle="This month"
           trend={18}
         />
-        
+
         <StatCard
           title="Pending Approvals"
           value={stats.pendingApprovals}
@@ -427,7 +427,7 @@ const AdminDashboard = () => {
           color="orange"
           subtitle="Awaiting review"
         />
-        
+
         <StatCard
           title="System Health"
           value={`${stats.systemHealth}%`}
@@ -479,7 +479,7 @@ const AdminDashboard = () => {
             View All
           </Link>
         </div>
-        
+
         <div className="space-y-4">
           {pendingCourses.map((course, index) => (
             <motion.div

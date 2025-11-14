@@ -22,7 +22,7 @@ const CourseDetail = () => {
       setLoading(true);
       const courseData = await coursesAPI.getCourseById(id);
       setCourse(courseData);
-      
+
       if (isStudent) {
         const enrollmentStatus = await enrollmentsAPI.isEnrolled(id);
         setIsEnrolled(enrollmentStatus);
@@ -79,7 +79,7 @@ const CourseDetail = () => {
                 className="w-full h-64 lg:h-80 object-cover rounded-t-lg"
               />
             </div>
-            
+
             <div className="card-body">
               <div className="flex items-center justify-between mb-4">
                 <span className="badge badge-primary">
@@ -89,15 +89,15 @@ const CourseDetail = () => {
                   {course.isFree ? 'Free' : `$${course.price}`}
                 </span>
               </div>
-              
+
               <h1 className="text-3xl font-bold text-gray-900 mb-4">
                 {course.title}
               </h1>
-              
+
               <p className="text-gray-600 text-lg mb-6">
                 {course.description}
               </p>
-              
+
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-gray-900">{course.lessonCount}</div>
@@ -116,7 +116,7 @@ const CourseDetail = () => {
                   <div className="text-sm text-gray-600">Category</div>
                 </div>
               </div>
-              
+
               <div className="border-t pt-6">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">About the Instructor</h3>
                 <div className="flex items-center">
@@ -236,4 +236,3 @@ const CourseDetail = () => {
 };
 
 export default CourseDetail;
-

@@ -71,23 +71,23 @@ public class WebSecurityConfig {
 
         configuration.setAllowedOrigins(allowedOrigins);
         configuration.setAllowCredentials(true);
-        
+
         // Allow all common HTTP methods
         configuration.setAllowedMethods(Arrays.asList(
-            "GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH", "HEAD"
+                "GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH", "HEAD"
         ));
-        
+
         // Allow all headers
         configuration.setAllowedHeaders(Arrays.asList("*"));
-        
+
         // Expose headers that frontend might need
         configuration.setExposedHeaders(Arrays.asList(
-            "Authorization", 
-            "Content-Type",
-            "Access-Control-Allow-Origin",
-            "Access-Control-Allow-Credentials"
+                "Authorization",
+                "Content-Type",
+                "Access-Control-Allow-Origin",
+                "Access-Control-Allow-Credentials"
         ));
-        
+
         // Cache preflight response for 1 hour
         configuration.setMaxAge(3600L);
 
@@ -101,33 +101,34 @@ public class WebSecurityConfig {
         http
                 // IMPORTANT: CORS must be configured BEFORE other security settings
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
-                
+
                 .csrf(AbstractHttpConfigurer::disable)
-                
-                .exceptionHandling(exception -> 
-                    exception.authenticationEntryPoint(unauthorizedHandler)
+
+                .exceptionHandling(exception ->
+                        exception.authenticationEntryPoint(unauthorizedHandler)
                 )
-                
-                .sessionManagement(session -> 
-                    session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+
+                .sessionManagement(session ->
+                        session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )
-                
+
                 .authorizeHttpRequests(authz -> authz
-                    // Allow preflight requests
-                    .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                    
-                    // Public endpoints
-                    .requestMatchers(
-                        "/auth/signin",
-                        "/auth/signup",
-                        "/auth/hello",
-                        "/actuator/**",
-                        "/health",
-                        "/api/health"
-                    ).permitAll()
-                    
-                    // For testing - you can restrict this later
-                    .anyRequest().permitAll()
+                        // Allow preflight requests
+                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+
+                        // Public endpoints
+                        .requestMatchers(
+                                "/auth/signin",
+                                "/auth/signup",
+                                "/auth/hello",
+                                "/actuator/**",
+                                "/health",
+                                "/api/health"
+                        ).permitAll()
+
+                        // For testing - you can restrict this later
+                        .anyRequest().authenticated()
+
                 );
 
         http.authenticationProvider(authenticationProvider());

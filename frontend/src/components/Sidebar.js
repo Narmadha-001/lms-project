@@ -204,7 +204,7 @@ const Sidebar = () => {
     const baseClasses = 'flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-all duration-200 group';
     const activeClasses = 'bg-blue-100 text-blue-700 shadow-sm';
     const inactiveClasses = 'text-slate-700 hover:bg-slate-100 hover:text-slate-900';
-    
+
     return `${baseClasses} ${isActive(path) ? activeClasses : inactiveClasses}`;
   };
 
@@ -213,7 +213,7 @@ const Sidebar = () => {
     const baseClasses = 'mr-3 h-5 w-5 transition-colors duration-200';
     const activeClasses = 'text-blue-600';
     const inactiveClasses = 'text-slate-400 group-hover:text-slate-600';
-    
+
     return `${baseClasses} ${isActive(path) ? activeClasses : inactiveClasses}`;
   };
 
@@ -349,4 +349,3 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
-
