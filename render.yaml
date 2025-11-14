@@ -5,14 +5,10 @@ services:
     repo: https://github.com/Narmadha-001/lms-project
     region: ohio
     plan: free
-    previewPlan: free
-
     dockerfilePath: backend/Dockerfile
-
     envVars:
       - key: SPRING_PROFILES_ACTIVE
         value: prod
-
       - key: MYSQLHOST
         sync: false
       - key: MYSQLUSER
@@ -23,10 +19,8 @@ services:
         sync: false
       - key: MYSQLPORT
         value: "3306"
-
       - key: JWT_SECRET
         sync: false
       - key: CORS_ALLOWED_ORIGINS
         value: https://your-frontend-url.onrender.com
-
     autoDeploy: true
